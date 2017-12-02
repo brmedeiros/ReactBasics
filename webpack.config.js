@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-    entry: './js/app.js',
+    entry: './src/js/app.js',
     output: {
 	path: path.resolve(__dirname, 'dist'),
 	filename: 'bundle.js',
@@ -14,7 +14,7 @@ module.exports = {
 		exclude: /(node_modules|bower_components)/,
 		loader: 'babel-loader',
 		options: {
-		    presets: ['env']
+		    presets: ['env', 'react']
 		}
 	    }
 	]
