@@ -1,6 +1,7 @@
-var webpack = require('webpack');
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebPackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './src/js/app.js',
@@ -23,19 +24,22 @@ module.exports = {
 	    {
 	    	test: /\.css$/,
 	    	use: ExtractTextPlugin.extract({
-	    	    fallback: "style-loader",
-	    	    use: "css-loader"
+	    	    fallback: 'style-loader',
+	    	    use: 'css-loader'
 	    	})
 	    }
 	]
     },
     plugins: [
-	new ExtractTextPlugin("main.css"),
+	new ExtractTextPlugin('main.css'),
 	new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery',
 	    Popper: ['popper.js', 'default']
-	})
+	}),
+	new CopyWebPackPlugin([
+	    {from: 'src/assets', to: 'assets'}
+	])
     ]
 };

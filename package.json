@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
+    "copy-webpack-plugin": "^4.2.3",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
