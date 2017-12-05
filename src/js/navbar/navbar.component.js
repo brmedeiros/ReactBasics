@@ -7,7 +7,7 @@ export default class Navbar extends React.Component {
 
 	      <a className='navbar-brand' href='#'>
 		<img src='assets/logo/logo.png' width='30' height='30' className='d-inline-block align-top mr-1' alt='Logo'/>
-		Site
+		New Site
 	      </a>
 	      <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarDropdown'>
 		<span className='navbar-toggler-icon'></span>
