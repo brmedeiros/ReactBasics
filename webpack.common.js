@@ -1,7 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebPackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     entry: './src/js/app.js',
@@ -30,6 +32,7 @@ module.exports = {
 	]
     },
     plugins: [
+	new CleanWebpackPlugin(['dist']),
 	new ExtractTextPlugin('main.css'),
 	new webpack.ProvidePlugin({
             $: 'jquery',
@@ -40,10 +43,6 @@ module.exports = {
 	new CopyWebPackPlugin([
 	    {from: 'src/assets', to: 'assets'},
 	    {from: 'src/index.html', to: 'index.html'}
-	])// ,
-	// new webpack.DefinePlugin({
-	//     'process.env.NODE_ENV': JSON.stringify('production')
-	// }),
-	// new webpack.optimize.UglifyJsPlugin()
+	])
     ]
 };
