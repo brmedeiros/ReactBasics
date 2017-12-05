@@ -39,7 +39,12 @@ module.exports = {
 	    Popper: ['popper.js', 'default']
 	}),
 	new CopyWebPackPlugin([
-	    {from: 'src/assets', to: 'assets'}
-	])
+	    {from: 'src/assets', to: 'assets'},
+	    {from: 'index.html', to: 'index.html'}
+	]),
+	new webpack.DefinePlugin({
+	    'process.env.NODE_ENV': JSON.stringify('production')
+	}),
+	new webpack.optimize.UglifyJsPlugin()
     ]
 };

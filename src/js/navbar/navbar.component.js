@@ -6,7 +6,7 @@ export default class Navbar extends React.Component {
 	    <nav className='navbar sticky-top navbar-expand-md navbar-light bg-light'>
 
 	      <a className='navbar-brand' href='#'>
-		<img src='dist/assets/logo/logo.png' width='30' height='30' className='d-inline-block align-top mr-1' alt='Logo'/>
+		<img src='assets/logo/logo.png' width='30' height='30' className='d-inline-block align-top mr-1' alt='Logo'/>
 		Site
 	      </a>
 	      <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarDropdown'>
