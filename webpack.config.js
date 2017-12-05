@@ -7,8 +7,7 @@ module.exports = {
     entry: './src/js/app.js',
     output: {
 	path: path.resolve(__dirname, 'dist'),
-	filename: 'bundle.js',
-	publicPath: '/dist'
+	filename: 'bundle.js'
     },
     module: {
 	rules: [
@@ -40,11 +39,11 @@ module.exports = {
 	}),
 	new CopyWebPackPlugin([
 	    {from: 'src/assets', to: 'assets'},
-	    {from: 'index.html', to: 'index.html'}
-	]),
-	new webpack.DefinePlugin({
-	    'process.env.NODE_ENV': JSON.stringify('production')
-	}),
-	new webpack.optimize.UglifyJsPlugin()
+	    {from: 'src/index.html', to: 'index.html'}
+	])// ,
+	// new webpack.DefinePlugin({
+	//     'process.env.NODE_ENV': JSON.stringify('production')
+	// }),
+	// new webpack.optimize.UglifyJsPlugin()
     ]
 };
